@@ -35,7 +35,7 @@ function deletePerson(name) {
     }
     const hasConsumedExpenses = expenses.some(expense => expense.consumedBy.includes(name));
     if (hasConsumedExpenses) {
-        alert("No se puede eliminar a esta persona porque ha consumido algún gasto.");
+        alert("No se puede eliminar a esta persona porque debe teka");
         return; // Salir de la función si la persona ha consumido gastos
     }
 
@@ -170,6 +170,7 @@ function renderExpensesTable() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${expense.description}</td>
+            <td>${expense.amount}</td>
             <td>${expense.person}</td>
             <td>${expense.consumedBy.join(', ')}</td>
             <td><button class="delete-btn"  onclick="deleteExpense(${index})"><i class="fa fa-trash"></i></button></td>

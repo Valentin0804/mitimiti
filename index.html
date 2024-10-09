@@ -24,31 +24,38 @@
         </header>
 
         <div class="container">
+
+            <!-- Agregar y ver personas -->
             <div id="peopleList">
-                <h2>Personas</h2>
+                <h2>Personas en la juntada</h2>
                 <ul id="people"></ul>
                 <input type="text" id="personName" placeholder="Nombre">
                 <button onclick="addPerson()">Agregar Persona</button>
             </div>
-
+            
+            <!-- Agregar gastos -->
             <div id="expenses">
                 <h2>Gastos</h2>
                 <ul id="expensesList"></ul>
                 <input type="text" id="expenseDescription"
                     placeholder="Descripción">
                 <input type="number" id="expenseAmount" placeholder="Monto">
+                <p>Quien lo pago?</p>
                 <select id="expensePerson"></select>
+                <p>Quien lo consumio?</p>
                 <div id="consumedByCheckboxes"></div>
                 <!-- Container para casillas de verificación -->
                 <button onclick="addExpense()">Agregar Gasto</button>
             </div>
 
+            <!-- ver gastos -->
             <div id="summary">
                 <h2>Tabla de Gastos</h2>
                 <table id="expensesTable">
                     <thead>
                         <tr>
                             <th>Descripción</th>
+                            <th>Monto</th>
                             <th>Pagado por</th>
                             <th>Consumido por</th>
                             <th>Eliminar</th>
@@ -59,6 +66,7 @@
                     </tbody>
                 </table>
             </div>
+            <!-- ver resúmen -->
             <div id="summary">
                 <h2>Resúmen</h2>
                 <table id="summaryTable">
@@ -75,6 +83,7 @@
                 </table>
             </div>
         </div>
+
         <footer>
             <p>&copy; 2024 Valentin Molina V.1.0.0</p>
         </footer>
