@@ -1,4 +1,4 @@
-Gestión de Gastos Compartidos - MITIMITI
+# Gestión de Gastos Compartidos - MITIMITI
 
 Este proyecto es una aplicación web sencilla creada con HTML, CSS y JavaScript 
 que permite gestionar gastos compartidos entre varias personas. Los usuarios pueden agregar personas, 
