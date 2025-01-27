@@ -23,7 +23,7 @@ function renderPeople() {
     // Recorre el array people
     const li = document.createElement("li"); // Se crea un elemento <li>
     li.textContent = person.name; // se cargan le cargan los nombres
-    li.innerHTML += `<button class="delete-btn" onclick="deletePerson('${person.name}')"><i class=""></i>X</button>`;
+    li.innerHTML += `<button class="delete-btn-people" onclick="deletePerson('${person.name}')"><i class=""></i>X</button>`;
     peopleList.appendChild(li); // El elemento <li> se agrega como hijo de peopleList
   });
 }
@@ -143,6 +143,8 @@ function DebePaga(puso, totalExpense) {
   return puso + totalExpense; // Puso negativo, gasto positivo
 }
 
+
+
 // Función para renderizar el resumen de gastos
 function renderSummary() {
   const summaryBody = document.getElementById("summaryBody");
@@ -168,7 +170,7 @@ function renderSummary() {
       )}</span>`;
     }
 
-    tr.innerHTML = `<td>${person.name}</td><td>${puso}</td><td>${totalExpense}</td><td>${amountToPayFormatted}</td><td><button class="delete-btn-2" onclick="deletePerson('${person.name}')"><i class="fa fa-trash"></i></button></td>`;
+    tr.innerHTML = `<td>${person.name}</td><td>${puso}</td><td>${totalExpense}</td><td>${amountToPayFormatted}</td>`;
     summaryBody.appendChild(tr);
   });
 }

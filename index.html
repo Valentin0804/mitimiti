@@ -1,96 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro de Gastos</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <!-- Font Awesome para los íconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Font para tipografia -->
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="header-text header-text-left">CUENTAS CLARAS</div>
-        <div class="logo">
-          <img src="LOGO.png" alt="Logo" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class=" py-3">
+        <div class="container2">
+            <div class="header-container">
+                <div class="header-text header-text-left">CUENTAS CLARAS</div>
+                <div class="logo">
+                    <img src="LOGO.png" alt="Logo" />
+                </div>
+                <div class="header-text header-text-right">CONSERVAN LA AMISTAD</div>
+            </div>
         </div>
-        <div class="header-text header-text-right">CONSERVAN LA AMISTAD</div>
-      </div>
     </header>
 
     <div class="container">
-      <!-- Agregar y ver personas -->
-      <div id="peopleList">
-        <h2>Personas en la juntada</h2>
-        <ul id="people"></ul>
-        <input type="text" id="personName" placeholder="Nombre" />
-        <button onclick="addPerson()">Agregar Persona</button>
-      </div>
+        <!-- Agregar y ver personas -->
+        <div id="peopleList" class="mb-4">
+            <h2>Personas en la juntada</h2>   
+            <div class="input-group mb-3">
+                <input type="text" id="personName" class="form-control" placeholder="Nombre" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" onclick="addPerson()">Agregar Persona</button>
+                </div>
+            </div>
+            <ul id="people" class="list-group mb-3"></ul>
+        </div>
 
-      <!-- Agregar gastos -->
-      <div id="expenses">
-        <h2>Gastos</h2>
-        <ul id="expensesList"></ul>
-        <input type="text" id="expenseDescription" placeholder="Descripción" />
-        <input type="number" id="expenseAmount" placeholder="Monto" />
-        <p>Quien lo pago?</p>
-        <select id="expensePerson"></select>
-        <p>Quien lo consumio?</p>
-        <div id="consumedByCheckboxes"></div>
-        <!-- Container para casillas de verificación -->
-        <button onclick="addExpense()">Agregar Gasto</button>
-      </div>
+        <!-- Agregar gastos -->
+        <div id="expenses" class="mb-4">
+            <h2>Gastos</h2>
+            <ul id="expensesList" class="list-group mb-3"></ul>
+            <div class="form-group">
+                <input type="text" id="expenseDescription" class="form-control" placeholder="Descripción" />
+            </div>
+            <div class="form-group">
+                <input type="number" id="expenseAmount" class="form-control" placeholder="Monto" />
+            </div>
+            <div class="form-group">
+                <label for="expensePerson">¿Quién lo pagó?</label>
+                <select id="expensePerson" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label>¿Quién lo consumió?</label>
+                <div id="consumedByCheckboxes" class="form-check"></div>
+            </div>
+            <button class="btn btn-primary" onclick="addExpense()">Agregar Gasto</button>
+        </div>
 
-      <!-- ver gastos -->
-      <div id="summary">
-        <h2>Tabla de Gastos</h2>
-        <table id="expensesTable">
-          <thead>
-            <tr>
-              <th>Descripción</th>
-              <th>Monto</th>
-              <th>Pagado por</th>
-              <th>Consumido por</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
-          <tbody id="body">
-            <!-- Aquí se agregarán las filas de la tabla dinámicamente mediante JavaScript -->
-          </tbody>
-        </table>
-      </div>
-      <!-- ver resúmen -->
-      <div id="summary">
-        <h2>Resúmen</h2>
-        <table id="summaryTable">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Puso un Total</th>
-              <th>Gastó un Total</th>
-              <th>A Pagar/Recibir</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
-          <tbody id="summaryBody"></tbody>
-        </table>
-      </div>
+        <!-- ver gastos -->
+        <div id="summary" class="mb-4">
+            <h2>Tabla de Gastos</h2>
+            <div class="table-responsive">
+                <table id="expensesTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Monto</th>
+                            <th>Pagado por</th>
+                            <th>Consumido por</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+                        <!-- Aquí se agregarán las filas de la tabla dinámicamente mediante JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ver resúmen -->
+        <div id="summary">
+            <h2>Resúmen</h2>
+            <div class="table-responsive">
+                <table id="summaryTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puso un Total</th>
+                            <th>Gastó un Total</th>
+                            <th>A Pagar/Recibir</th>
+                            <!--<th>Eliminar</th>-->
+                        </tr>
+                    </thead>
+                    <tbody id="summaryBody"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <footer>
-      <p>&copy; 2024 Valentin Molina V.1.0.0</p>
+        <p>&copy; 2024 Valentin Molina V.1.0.0</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

@@ -10,29 +10,48 @@ body {
 }
 
 header {
-  background-color: #050505;
-  padding: 15px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #0a080c; /* Color de fondo oscuro */
+  color: #ffa500; /* Texto en color naranja */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .header-text {
-  font-size: 1.2em;
+  font-size: 20px;
   font-weight: bold;
-  color: #ffa500;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+
+.header-text-left {
+  text-align: left;
+}
+
+.header-text-right {
+  text-align: right;
 }
 
 .logo img {
-  height: 60px;
+  height: 80px; /* Ajusta el tamaño del logo */
+  max-width: 100px;
 }
+
 
 .container {
   width: 90%;
@@ -53,6 +72,7 @@ h2 {
 #consumedByCheckboxes {
   margin-bottom: 30px;
 }
+
 
 input[type="text"],
 input[type="number"],
@@ -132,14 +152,18 @@ ul li {
   margin-right: 7px; 
 }
 
-.delete-btn {
+.delete-btn-people {
   /*Boton en 'Personas en la juntada' */
   background-color: #000000;
   border-radius: 5px;
   cursor: pointer;
-  padding: 5px;
   font-size: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
+
 
 .delete-btn-2 {
   /*Boton en 'tabla de gastos' y 'Resumen' */
@@ -149,7 +173,7 @@ ul li {
   padding: 5px;
 }
 
-.delete-btn:hover, .delete-btn-2:hover {
+.delete-btn-people:hover, .delete-btn-2:hover {
     background-color: #91140b; /* Efecto hover */
     color: #000000;
   }
@@ -164,6 +188,8 @@ footer {
   display: flex;
   padding-bottom: 0.5em;
   justify-content: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #expensesList {
